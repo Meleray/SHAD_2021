@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    int n, k;
+    vector<int> a(n);
+    map<int, int> b;
+    cin >> n;
+    for (int i =0; i < n; ++i) {
+        cin >> a[i];
+        b[a[i]] += 1;
+    }
+    cin >> k;
+    int curr = 0;
+    for (int i = 0; i < n; ++i) {
+        if (b[a[i]] == 1) {
+            ++curr;
+        }
+        if (curr == k) {
+            cout << i + 1 << endl;
+            return 0;
+        }
+    }
+    cout << 0 << endl;
+    return 0;
+}
